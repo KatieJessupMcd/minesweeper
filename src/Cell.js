@@ -8,7 +8,7 @@ class Cell extends Component {
     this.state = {
       isRevealed: false, 
       value: -1 | 0 | 1, 
-      isFlagged: true, 
+      isFlagged: false, 
       xCoord: 0, 
       yCoord: 0
     }
@@ -23,7 +23,19 @@ class Cell extends Component {
     return <div className='Cell'><p>This is a cell</p></div>;
   }
 }
-Cell.defaultProps = {}
-Cell.propTypes = {}
+Cell.defaultProps = {
+  isRevealed: false, 
+  value: 0, 
+  isFlagged: false, 
+  xCoord: 0, 
+  yCoord: 0
+}
+Cell.propTypes = {
+  isRevealed: PropTypes.bool, 
+  value: PropTypes.number, 
+  isFlagged: PropTypes.bool,
+  xCoord: PropTypes.number, 
+  yCoord: PropTypes.number
+}
 
 export default Cell;
